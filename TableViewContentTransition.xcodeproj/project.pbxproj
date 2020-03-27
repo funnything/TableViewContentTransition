@@ -63,10 +63,10 @@
 		7D548F9A242E403800570D3D = {
 			isa = PBXGroup;
 			children = (
-				7D548FA5242E403800570D3D /* TableViewContentTransition */,
-				7D548FA4242E403800570D3D /* Products */,
-				3272344F840DC0169896263C /* Pods */,
 				1425739F12847D31F507BD0F /* Frameworks */,
+				3272344F840DC0169896263C /* Pods */,
+				7D548FA4242E403800570D3D /* Products */,
+				7D548FA5242E403800570D3D /* TableViewContentTransition */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,12 +82,12 @@
 			isa = PBXGroup;
 			children = (
 				7D548FA6242E403800570D3D /* AppDelegate.swift */,
+				7D548FAF242E403B00570D3D /* Assets.xcassets */,
+				7D548FB4242E403B00570D3D /* Info.plist */,
+				7D548FB1242E403B00570D3D /* LaunchScreen.storyboard */,
+				7D548FAC242E403800570D3D /* Main.storyboard */,
 				7D548FA8242E403800570D3D /* SceneDelegate.swift */,
 				7D548FAA242E403800570D3D /* ViewController.swift */,
-				7D548FAC242E403800570D3D /* Main.storyboard */,
-				7D548FAF242E403B00570D3D /* Assets.xcassets */,
-				7D548FB1242E403B00570D3D /* LaunchScreen.storyboard */,
-				7D548FB4242E403B00570D3D /* Info.plist */,
 			);
 			path = TableViewContentTransition;
 			sourceTree = "<group>";
@@ -222,6 +222,7 @@
 				7D548FAD242E403800570D3D /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		7D548FB1242E403B00570D3D /* LaunchScreen.storyboard */ = {
@@ -230,6 +231,7 @@
 				7D548FB2242E403B00570D3D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
