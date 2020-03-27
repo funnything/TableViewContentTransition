@@ -3,14 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7D548FA7242E403800570D3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D548FA6242E403800570D3D /* AppDelegate.swift */; };
-		7D548FA9242E403800570D3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D548FA8242E403800570D3D /* SceneDelegate.swift */; };
 		7D548FAB242E403800570D3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D548FAA242E403800570D3D /* ViewController.swift */; };
-		7D548FAE242E403800570D3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D548FAC242E403800570D3D /* Main.storyboard */; };
 		7D548FB0242E403B00570D3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D548FAF242E403B00570D3D /* Assets.xcassets */; };
 		7D548FB3242E403B00570D3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D548FB1242E403B00570D3D /* LaunchScreen.storyboard */; };
 		FB125729E2C181436B2AE4D4 /* Pods_TableViewContentTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0198B1B886D4A6871139AE7 /* Pods_TableViewContentTransition.framework */; };
@@ -19,9 +17,7 @@
 /* Begin PBXFileReference section */
 		7D548FA3242E403800570D3D /* TableViewContentTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewContentTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D548FA6242E403800570D3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7D548FA8242E403800570D3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7D548FAA242E403800570D3D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7D548FAD242E403800570D3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7D548FAF242E403B00570D3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D548FB2242E403B00570D3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D548FB4242E403B00570D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +52,6 @@
 				D35E8C86FAF9FBFAC8D5B27C /* Pods-TableViewContentTransition.debug.xcconfig */,
 				D626EC7A3FA26997A3AAFE32 /* Pods-TableViewContentTransition.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,8 +80,6 @@
 				7D548FAF242E403B00570D3D /* Assets.xcassets */,
 				7D548FB4242E403B00570D3D /* Info.plist */,
 				7D548FB1242E403B00570D3D /* LaunchScreen.storyboard */,
-				7D548FAC242E403800570D3D /* Main.storyboard */,
-				7D548FA8242E403800570D3D /* SceneDelegate.swift */,
 				7D548FAA242E403800570D3D /* ViewController.swift */,
 			);
 			path = TableViewContentTransition;
@@ -154,7 +147,6 @@
 			files = (
 				7D548FB3242E403B00570D3D /* LaunchScreen.storyboard in Resources */,
 				7D548FB0242E403B00570D3D /* Assets.xcassets in Resources */,
-				7D548FAE242E403800570D3D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,22 +201,12 @@
 			files = (
 				7D548FAB242E403800570D3D /* ViewController.swift in Sources */,
 				7D548FA7242E403800570D3D /* AppDelegate.swift in Sources */,
-				7D548FA9242E403800570D3D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7D548FAC242E403800570D3D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7D548FAD242E403800570D3D /* Base */,
-			);
-			name = Main.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
 		7D548FB1242E403B00570D3D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
