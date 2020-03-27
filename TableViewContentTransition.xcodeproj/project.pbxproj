@@ -13,6 +13,7 @@
 		7D548FAE242E403800570D3D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D548FAC242E403800570D3D /* Main.storyboard */; };
 		7D548FB0242E403B00570D3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7D548FAF242E403B00570D3D /* Assets.xcassets */; };
 		7D548FB3242E403B00570D3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7D548FB1242E403B00570D3D /* LaunchScreen.storyboard */; };
+		FB125729E2C181436B2AE4D4 /* Pods_TableViewContentTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0198B1B886D4A6871139AE7 /* Pods_TableViewContentTransition.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		7D548FAF242E403B00570D3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7D548FB2242E403B00570D3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7D548FB4242E403B00570D3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0198B1B886D4A6871139AE7 /* Pods_TableViewContentTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TableViewContentTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D35E8C86FAF9FBFAC8D5B27C /* Pods-TableViewContentTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableViewContentTransition.debug.xcconfig"; path = "Target Support Files/Pods-TableViewContentTransition/Pods-TableViewContentTransition.debug.xcconfig"; sourceTree = "<group>"; };
+		D626EC7A3FA26997A3AAFE32 /* Pods-TableViewContentTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TableViewContentTransition.release.xcconfig"; path = "Target Support Files/Pods-TableViewContentTransition/Pods-TableViewContentTransition.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB125729E2C181436B2AE4D4 /* Pods_TableViewContentTransition.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1425739F12847D31F507BD0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C0198B1B886D4A6871139AE7 /* Pods_TableViewContentTransition.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3272344F840DC0169896263C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D35E8C86FAF9FBFAC8D5B27C /* Pods-TableViewContentTransition.debug.xcconfig */,
+				D626EC7A3FA26997A3AAFE32 /* Pods-TableViewContentTransition.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7D548F9A242E403800570D3D = {
 			isa = PBXGroup;
 			children = (
 				7D548FA5242E403800570D3D /* TableViewContentTransition */,
 				7D548FA4242E403800570D3D /* Products */,
+				3272344F840DC0169896263C /* Pods */,
+				1425739F12847D31F507BD0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D548FB7242E403B00570D3D /* Build configuration list for PBXNativeTarget "TableViewContentTransition" */;
 			buildPhases = (
+				DB92010FDA370A3056A3B31D /* [CP] Check Pods Manifest.lock */,
 				7D548F9F242E403800570D3D /* Sources */,
 				7D548FA0242E403800570D3D /* Frameworks */,
 				7D548FA1242E403800570D3D /* Resources */,
+				BCE01066D6C0779E8E128607 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BCE01066D6C0779E8E128607 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TableViewContentTransition/Pods-TableViewContentTransition-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TableViewContentTransition/Pods-TableViewContentTransition-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TableViewContentTransition/Pods-TableViewContentTransition-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DB92010FDA370A3056A3B31D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TableViewContentTransition-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7D548F9F242E403800570D3D /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		7D548FB8242E403B00570D3D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D35E8C86FAF9FBFAC8D5B27C /* Pods-TableViewContentTransition.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		7D548FB9242E403B00570D3D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D626EC7A3FA26997A3AAFE32 /* Pods-TableViewContentTransition.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
