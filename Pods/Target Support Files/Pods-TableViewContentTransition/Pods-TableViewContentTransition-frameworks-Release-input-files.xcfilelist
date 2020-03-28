@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-TableViewContentTransition/Pods-TableViewContentTransition-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework
+${BUILT_PRODUCTS_DIR}/DifferenceKit/DifferenceKit.framework
 ${BUILT_PRODUCTS_DIR}/Signals/Signals.framework
 ${BUILT_PRODUCTS_DIR}/Then/Then.framework

@@ -1,24 +1,33 @@
 PODS:
   - Cartography (4.0.0)
+  - DifferenceKit (1.1.5):
+    - DifferenceKit/Core (= 1.1.5)
+    - DifferenceKit/UIKitExtension (= 1.1.5)
+  - DifferenceKit/Core (1.1.5)
+  - DifferenceKit/UIKitExtension (1.1.5):
+    - DifferenceKit/Core
   - Signals (6.1.0)
   - Then (2.6.0)
 
 DEPENDENCIES:
   - Cartography
+  - DifferenceKit
   - Signals
   - Then
 
 SPEC REPOS:
   https://cdn.cocoapods.org/:
     - Cartography
+    - DifferenceKit
     - Signals
     - Then
 
 SPEC CHECKSUMS:
   Cartography: c5626d29056b20f1e95c017326ee4df57cc39ad8
+  DifferenceKit: 516f12e336ed65a3a0665847b5c3cb5cad4bd4ea
   Signals: f8e5c979e93c35273f8dfe55ee7f47213d3e8fe8
   Then: 90cd104fd951cec1980a03f57704ad8f784d4d79
 
-PODFILE CHECKSUM: 5f617b01c90320e64b43953657af40be812047a9
+PODFILE CHECKSUM: 512aa314eca165b684c4e7e5e9a266d090bd78f0
 
 COCOAPODS: 1.9.1
