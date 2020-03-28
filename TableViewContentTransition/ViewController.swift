@@ -7,6 +7,7 @@
 //
 
 import Cartography
+import DifferenceKit
 import Signals
 import Then
 import UIKit
@@ -71,11 +72,14 @@ class ViewController: UIViewController {
     }
 
     func updateContent(_ newContent: [Int]) {
-        content = newContent
-        tableView.reloadData()
+        let changeset = StagedChangeset(source: content, target: newContent)
+        tableView.reload(using: changeset, with: .automatic) { data in
+            content = data
 
-        emptyView.isHidden = !newContent.isEmpty
-        tableView.isHidden = newContent.isEmpty
+            // TODO: should do this on complete animation
+            emptyView.isHidden = !newContent.isEmpty
+            tableView.isHidden = newContent.isEmpty
+        }
     }
 
     func toSequence(_ value: Int) -> [Int] {
@@ -105,6 +109,8 @@ extension ViewController: UITableViewDataSource {
         }
     }
 }
+
+extension Int: Differentiable {}
 
 extension ViewProxy {
     var sv: ViewProxy {
