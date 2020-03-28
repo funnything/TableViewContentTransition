@@ -55,8 +55,7 @@ class ViewController: UIViewController {
                     _ = UIButton(type: .system).then {
                         let seq = toSequence(y * columns + x)
                         $0.onTouchUpInside.subscribe(with: self) { [unowned self] in
-                            self.content = seq
-                            self.tableView.reloadData()
+                            self.updateContent(seq)
                         }
                         let title = seq.isEmpty ? "empty" : seq.map { "\($0)" }.joined(separator: "-")
                         $0.setTitle(title, for: .normal)
@@ -69,6 +68,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    func updateContent(_ newContent: [Int]) {
+        content = newContent
+        tableView.reloadData()
+
+        emptyView.isHidden = !newContent.isEmpty
+        tableView.isHidden = newContent.isEmpty
     }
 
     func toSequence(_ value: Int) -> [Int] {
