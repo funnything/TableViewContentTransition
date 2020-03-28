@@ -13,7 +13,7 @@ import Then
 import UIKit
 
 class ViewController: UIViewController {
-    var content = [0, 1, 2, 3]
+    var content = (0..<4).map { Item(id: $0, name: Int.random(in: 0..<3)) }
 
     lazy var emptyView: UIView = undefined()
     lazy var tableView: UITableView = undefined()
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
                     _ = UIButton(type: .system).then {
                         let seq = toSequence(y * columns + x)
                         $0.onTouchUpInside.subscribe(with: self) { [unowned self] in
-                            self.updateContent(seq)
+                            self.updateContent(seq.map { Item(id: $0, name: Int.random(in: 0..<3)) })
                         }
                         let title = seq.isEmpty ? "empty" : seq.map { "\($0)" }.joined(separator: "-")
                         $0.setTitle(title, for: .normal)
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    func updateContent(_ newContent: [Int]) {
+    func updateContent(_ newContent: [Item]) {
         let changeset = StagedChangeset(source: content, target: newContent)
         tableView.reload(using: changeset, with: .automatic) { data in
             content = data
@@ -105,12 +105,23 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath).then {
             let item = content[indexPath.row]
-            $0.textLabel?.text = "\(item)"
+            $0.textLabel?.text = "\(item.id) (\(item.name))"
         }
     }
 }
 
-extension Int: Differentiable {}
+struct Item: Differentiable {
+    let id: Int
+    let name: Int
+
+    var differenceIdentifier: Int {
+        return id
+    }
+
+    func isContentEqual(to source: Item) -> Bool {
+        return name == source.name
+    }
+}
 
 extension ViewProxy {
     var sv: ViewProxy {
