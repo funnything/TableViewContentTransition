@@ -10,6 +10,7 @@ target 'TableViewContentTransition' do
 
   # Pods for TableViewContentTransition
   pod 'Cartography'
+  pod 'DifferenceKit'
   pod 'Signals'
   pod 'Then'
 end
