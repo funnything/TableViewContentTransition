@@ -13,7 +13,7 @@ import Then
 import UIKit
 
 class ViewController: UIViewController {
-    var content = (0..<4).map { Item(id: $0, name: Int.random(in: 0..<3)) }
+    var content = (0..<4).map { Item(id: $0, name: Int.random(in: 0..<3), detail: Int.random(in: 0..<Int.max)) }
 
     lazy var emptyView: UIView = undefined()
     lazy var tableView: UITableView = undefined()
@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         tableView = UITableView().then {
             $0.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
             $0.dataSource = self
+            $0.delegate = self
             view.addSubview($0)
             constrain($0) { $0.matchParent() }
         }
@@ -56,7 +57,7 @@ class ViewController: UIViewController {
                     _ = UIButton(type: .system).then {
                         let seq = toSequence(y * columns + x)
                         $0.onTouchUpInside.subscribe(with: self) { [unowned self] in
-                            self.updateContent(seq.map { Item(id: $0, name: Int.random(in: 0..<3)) })
+                            self.updateContent(seq.map { Item(id: $0, name: Int.random(in: 0..<3), detail: Int.random(in: 0..<Int.max)) })
                         }
                         let title = seq.isEmpty ? "empty" : seq.map { "\($0)" }.joined(separator: "-")
                         $0.setTitle(title, for: .normal)
@@ -73,12 +74,17 @@ class ViewController: UIViewController {
 
     func updateContent(_ newContent: [Item]) {
         let changeset = StagedChangeset(source: content, target: newContent)
-        tableView.reload(using: changeset, with: .automatic) { data in
-            content = data
-
-            // TODO: should do this on complete animation
-            emptyView.isHidden = !newContent.isEmpty
-            tableView.isHidden = newContent.isEmpty
+        if changeset.isEmpty {
+            // Update even if changes is empty (non-visible property may updated)
+            content = newContent
+        } else {
+            tableView.reload(using: changeset, with: .automatic) { data in
+                content = data
+                
+                // TODO: should do this on complete animation
+                emptyView.isHidden = !newContent.isEmpty
+                tableView.isHidden = newContent.isEmpty
+            }
         }
     }
 
@@ -110,9 +116,18 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        // Check item detail
+        dump(content[indexPath.row])
+    }
+}
+
 struct Item: Differentiable {
     let id: Int
     let name: Int
+    let detail: Int
 
     var differenceIdentifier: Int {
         return id
