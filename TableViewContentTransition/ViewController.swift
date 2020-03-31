@@ -22,6 +22,7 @@ class ViewController: UIViewController {
         super.loadView()
 
         emptyView = UILabel().then {
+            $0.isHidden = true
             $0.text = "No data"
             view.addSubview($0)
             constrain($0) { v in
@@ -78,12 +79,14 @@ class ViewController: UIViewController {
             // Update even if changes is empty (non-visible property may updated)
             content = newContent
         } else {
+            if content.isEmpty {
+                UIView.crossFade(toShow: tableView, toHide: emptyView)
+            } else if newContent.isEmpty {
+                UIView.crossFade(toShow: emptyView, toHide: tableView)
+            }
+
             tableView.reload(using: changeset, with: .automatic) { data in
                 content = data
-                
-                // TODO: should do this on complete animation
-                emptyView.isHidden = !newContent.isEmpty
-                tableView.isHidden = newContent.isEmpty
             }
         }
     }
@@ -173,5 +176,23 @@ func vstack(spacing: CGFloat? = nil) -> UIStackView {
         if let spacing = spacing {
             $0.spacing = spacing
         }
+    }
+}
+
+extension UIView {
+    static func crossFade(toShow: UIView, toHide: UIView) {
+        toShow.alpha = 0
+        toShow.isHidden = false
+
+        UIView.animate(
+            withDuration: 0.2,
+            animations: {
+                toShow.alpha = 1
+                toHide.alpha = 0
+            },
+            completion:  { _ in
+                toHide.isHidden = true
+            }
+        )
     }
 }
